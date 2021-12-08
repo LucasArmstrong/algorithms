@@ -1,14 +1,14 @@
 // find two numbers in given array that add up to targetSum
 function twoNumberSum(array, targetSum) {
 	array.sort((a, b) => a - b);
-	let l = 0;
-	let r = array.length-1;
-	while (l < r) {	
-		let sum = array[l] + array[r]; 
+	let leftPointer = 0;
+	let rightPointer = array.length-1;
+	while (leftPointer < rightPointer) {	
+		let sum = array[leftPointer] + array[rightPointer]; 
 		if (sum === targetSum) {
-			return [array[l], array[r]];
+			return [array[leftPointer], array[rightPointer]];
 		} else {
-			(sum < targetSum) ? l++ : r--;
+			(sum < targetSum) ? leftPointer++ : rightPointer--;
 		}
 	}
 	return [];
