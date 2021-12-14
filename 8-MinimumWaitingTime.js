@@ -1,4 +1,4 @@
-// given array of query execution times, output the minimum execution time for executing all queries
+// given array of query execution times, output the minimum total waiting time for executing all queries
 function minimumWaitingTime(queries) {
 	let time = 0;
 	if (queries.length <= 1) {

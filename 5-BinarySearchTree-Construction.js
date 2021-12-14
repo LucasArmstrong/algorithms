@@ -1,3 +1,5 @@
+// build a class for bst construction
+//todo: add notes for each case on remove()
 class BST {
 	constructor(value) {
 		this.value = value;
@@ -43,15 +45,15 @@ class BST {
 	}
 
 	remove(value, parent = null) {
-		if (value < this.value) {
+		if (value < this.value) { // move left, value is smaller
 			if (this.left !== null) {
 				this.left.remove(value, this);
 			}
-		} else if (value > this.value) {
+		} else if (value > this.value) { // move right, value is greater
 			if (this.right !== null) {
 				this.right.remove(value, this);
 			}
-		} else {
+		} else { // value is equal here , what can we assume
 			if (this.left !== null && this.right !== null) {
 				this.value = this.right.getMinValue();
 				this.right.remove(this.value, this);
